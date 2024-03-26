@@ -1,0 +1,4 @@
+1. kubectl config get-contexts                                        ==> Command to know which namespace I belong to
+2. kubectl get ns                                                     ==> Command to know how many namespaces are there
+3. Context                                                            ==> Context is a combination of a user and a cluster
+4. kubectl config set-context --current --namespace=<some-namespace>  ==> Connecting to a different namespace in the current cluster

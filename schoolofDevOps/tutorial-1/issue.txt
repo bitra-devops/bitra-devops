@@ -1,0 +1,87 @@
+Name:                 kube-proxy-8m57c
+Namespace:            kube-system
+Priority:             2000001000
+Priority Class Name:  system-node-critical
+Service Account:      kube-proxy
+Node:                 kind-worker/172.18.0.2
+Start Time:           Thu, 21 Mar 2024 15:26:33 +0530
+Labels:               controller-revision-hash=5468d454c4
+                      k8s-app=kube-proxy
+                      pod-template-generation=1
+Annotations:          <none>
+Status:               Running
+IP:                   172.18.0.2
+IPs:
+  IP:           172.18.0.2
+Controlled By:  DaemonSet/kube-proxy
+Containers:
+  kube-proxy:
+    Container ID:  containerd://1bc61ad32d0498a44c79b837996afe4efa2d378e326ce211c8c64bc902e89ffa
+    Image:         registry.k8s.io/kube-proxy:v1.28.0
+    Image ID:      docker.io/library/import-2023-08-15@sha256:de09df8dea678010e11a550d40490f5b8483e5a0d9e556d0c47a6824cf8cf07a
+    Port:          <none>
+    Host Port:     <none>
+    Command:
+      /usr/local/bin/kube-proxy
+      --config=/var/lib/kube-proxy/config.conf
+      --hostname-override=$(NODE_NAME)
+    State:          Waiting
+      Reason:       CrashLoopBackOff
+    Last State:     Terminated
+      Reason:       Error
+      Exit Code:    1
+      Started:      Sat, 23 Mar 2024 12:18:37 +0530
+      Finished:     Sat, 23 Mar 2024 12:18:37 +0530
+    Ready:          False
+    Restart Count:  121
+    Environment:
+      NODE_NAME:   (v1:spec.nodeName)
+    Mounts:
+      /lib/modules from lib-modules (ro)
+      /run/xtables.lock from xtables-lock (rw)
+      /var/lib/kube-proxy from kube-proxy (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-k74cm (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             False 
+  ContainersReady   False 
+  PodScheduled      True 
+Volumes:
+  kube-proxy:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      kube-proxy
+    Optional:  false
+  xtables-lock:
+    Type:          HostPath (bare host directory volume)
+    Path:          /run/xtables.lock
+    HostPathType:  FileOrCreate
+  lib-modules:
+    Type:          HostPath (bare host directory volume)
+    Path:          /lib/modules
+    HostPathType:  
+  kube-api-access-k74cm:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              kubernetes.io/os=linux
+Tolerations:                 op=Exists
+                             node.kubernetes.io/disk-pressure:NoSchedule op=Exists
+                             node.kubernetes.io/memory-pressure:NoSchedule op=Exists
+                             node.kubernetes.io/network-unavailable:NoSchedule op=Exists
+                             node.kubernetes.io/not-ready:NoExecute op=Exists
+                             node.kubernetes.io/pid-pressure:NoSchedule op=Exists
+                             node.kubernetes.io/unreachable:NoExecute op=Exists
+                             node.kubernetes.io/unschedulable:NoSchedule op=Exists
+Events:
+  Type     Reason          Age                   From     Message
+  ----     ------          ----                  ----     -------
+  Warning  BackOff         34h (x1230 over 38h)  kubelet  Back-off restarting failed container kube-proxy in pod kube-proxy-8m57c_kube-system(461c852e-2377-4b17-a1af-1ccbeb43f47e)
+  Normal   SandboxChanged  12m                   kubelet  Pod sandbox changed, it will be killed and re-created.
+  Normal   Pulled          9m27s (x4 over 12m)   kubelet  Container image "registry.k8s.io/kube-proxy:v1.28.0" already present on machine
+  Normal   Created         9m24s (x4 over 12m)   kubelet  Created container kube-proxy
+  Normal   Started         9m22s (x4 over 11m)   kubelet  Started container kube-proxy
+  Warning  BackOff         2m (x41 over 11m)     kubelet  Back-off restarting failed container kube-proxy in pod kube-proxy-8m57c_kube-system(461c852e-2377-4b17-a1af-1ccbeb43f47e)
