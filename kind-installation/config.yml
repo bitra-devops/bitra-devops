@@ -13,13 +13,13 @@ nodes:
 #  name: worker-2
   image: kindest/node:v1.28.0
 
-- role: worker
+#- role: worker
 #  name: worker-3
-  image: kindest/node:v1.28.0
+#  image: kindest/node:v1.28.0
 
-- role: worker
+#- role: worker
 #  name: worker-4
-  image: kindest/node:v1.28.0
+#  image: kindest/node:v1.28.0
 
 #- role: worker
 #  image: kindest/node:v1.28.0
