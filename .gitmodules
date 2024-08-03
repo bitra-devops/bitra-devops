@@ -1,0 +1,3 @@
+[submodule "ansible-place"]
+	path = ansible-place
+	url = https://github.com/bitra-devops/ansible-place.git
